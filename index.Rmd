@@ -1,13 +1,13 @@
 ---
 ---
 
-<link rel="stylesheet" href="styles.css" type="text/css">
+<img src="me.jpg" style="width:40%; border:10px solid; margin-right: 20px" align="left">
 
+I am a PhD Candidate at the Department of Political Science, University of Copenhagen. I specialize in positive political economics and political methodology. My research focuses on political careers, corporate lobbyism and the mechanisms that forces policy makers to respond to pressure from the public and special interests alike. These are classical themes in political science which I attempt to shed new light on by using novel data sources. To this end, my methodological focus is on measurement theory and causal inference with observational panel data. 
 
-I am a PhD Candidate at the Department of Political Science, University of Copenhagen. I specialize in positive political economics and political methodology. My research focuses on corporate lobbyism and the mechanisms that forces policy makers to respond to pressure from the public and special interests alike. These are classical themes in political science which I attempt to shed new light on by using novel data sources. To this end, my methodological focus is on measurement theory and causal inference with observational panel data. 
+In my dissertation, I focus on the United States Congress and investigate how future careers change the behavior of legislators, while they are still in office, and how political connections can benefit large American firms, for instance, by changing the way bureaucrats enforce rules against them.
 
-
-It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, very little is known about its causes and consequences. In my dissertation, I investigate 
+Besides the focus on the US in my dissertations, I have ongoing research projects on the responsiveness of Danish municipal policy to public opinion, and the determinants of firm-level trade policy in a sample of 22 WTO jurisdictions.
 
 
 

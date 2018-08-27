@@ -1,22 +1,21 @@
-name: "Benjamin CK Egerod"
-output_dir: "."
+name: "my-website"
+fontsize: 11pt 
 navbar:
   title: "Benjamin CK Egerod"
-left:
+  left:
   - text: "Research"
-  href: research.html
+    href: research.html
   - text: "Teaching"
-  href: teaching.html
+    href: teaching.html
   - text: "Contact"
-  href: contact.html
-right:
+    href: contact.html
+  right:
   - icon: fa-github fa-lg
-  href: https://github.com/BC-Egerod
+    href: https://github.com/BC-Egerod
   - icon: fa-twitter fa-lg
-  href: https://twitter.com/BCEgerod
+    href: https://twitter.com/BCEgerod
   - icon: fa-linkedin fa-lg
-  href: https://www.linkedin.com/in/benjamin-carl-egerod-a5b15363/
-  output:
+    href: https://www.linkedin.com/in/benjamin-carl-egerod-a5b15363/
+output:
   html_document:
   theme: paper
-css: 'styles.css'
