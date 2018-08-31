@@ -1,12 +1,87 @@
 ---
 ---
+<br>
+<br>
+My research interests revolve around four main themes: 1) Revolving door politics, 2) corporate lobbying, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
+
+<br>
 
 
-It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, very little is known about the causes and consequences of this so-called revolving door between business and politics. In my dissertation, I investigate how 1) the potential for post-elective employment shapes the behavior of US Members of Congress, and 2) firms that hire former Members of Congress can ...
 
-**The Revolving Door and Taxes -- Political Connections Decrease Corporate Tax Rates**
+### Revolving Door Politics
 
-<!DOCTYPE html>
+It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, we know very little about, whether the so-called revolving door between business and politics changes policy outcomes. In my dissertation, I investigate how 1) the potential for post-elective employment shapes the behavior of US Members of Congress, and 2) firms that hire former Members of Congress can ...
+
+<img src="TaxSaved.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TaxDraft.pdf">The Revolving Door and Taxes -- Political Connections Decrease Corporate Tax Rates</a>
+ 
+
+I investigate the effect of political connections on regulatory forbearance by examining the interactions between firms and the Internal Revenue Service. Click on title for a working paper. <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+.collapsible {
+    color: black;
+    cursor: pointer;
+    padding: 0px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+    background-color:white;
+    element.style.color = red;
+}
+
+
+.content {
+    padding: 0px;
+    overflow: hidden;
+    color=black;
+    style="color:red";
+    element.style.color = black;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content" >
+  <p>For fear of retribution, agencies may enforce rules more leniently against firms with
+political connections. I test the argument as it pertains to the enforcement of
+tax policy by the Internal Revenue Service (IRS). I compile a novel database of
+publicly listed firms, that have hired Members of the US Congress (MCs) in any
+capacity in the period 2004-2015. I present evidence that hiring a former MC
+decreases the average company's tax rate by a large margin relative the the changes,
+the average firm normally experiences. The reduction is short-lived, but yields
+meaningful tax-savings for the individual firm, while only modestly impacting public
+finances. I show that the effect is driven by the MCs, who have the strongest
+political connections, and served in committees with oversight of the IRS. I present
+suggestive evidence that firms that hire highly connected MCs substitute away from
+traditional forms of lobbying, and are invited to hearings more often. This is likely
+to pressure the IRS in their decision-making. These results indicate that firms can
+use the revolving door to pursue significant economic rents.</p>
+</div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a>
+
+I investigate the effect of private sector career prospects on whether US senators choose to walk through the revolving door. Click on title for a working paper. <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,23 +107,92 @@ It routinely attracts both attention and condemnation, when elected officals lea
 </head>
 <body>
 
-<button class="collapsible">Open Abstract</button>
+<button style="color:black" class="collapsible">Open Abstract</button>
 <div class="content">
-  <p>For fear of retribution, agencies may enforce rules more leniently against firms with
-political connections. I test the argument as it pertains to the enforcement of
-tax policy by the Internal Revenue Service (IRS). I compile a novel database of
-publicly listed firms, that have hired Members of the US Congress (MCs) in any
-capacity in the period 2004-2015. I present evidence that hiring a former MC
-decreases the average company's tax rate by a large margin relative the the changes,
-the average firm normally experiences. The reduction is short-lived, but yields
-meaningful tax-savings for the individual firm, while only modestly impacting public
-finances. I show that the effect is driven by the MCs, who have the strongest
-political connections, and served in committees with oversight of the IRS. I present
-suggestive evidence that firms that hire highly connected MCs substitute away from
-traditional forms of lobbying, and are invited to hearings more often. This is likely
-to pressure the IRS in their decision-making. These results indicate that firms can
-use the revolving door to pursue significant economic rents..</p>
+  <p>While it is often conjectured that private sector salaries lure elected politicians out of public service, no quantitative evidence exists on this proposition. If private sector actors compete with the electorate for the labor of high-skilled politicians, it would have important implications for representative democracy. I argue that legislators gauge their private sector career prospects by observing how successful their former colleagues, who now work as lobbyists, are. I document that when career prospects improve, so does the probability that senators take a lobbying job.  There is no effect immediately before a senator's pension scheme improves. Senators, who retire from working life after Congress or are elected to a safe seat, are also unaffected.  Finally, senators, who have sponsored the least bills and are more absent for floor votes, are affected the most. All of this indicates that senators react to opportunity costs associated with being in office.</p>
 </div>
+
+
+
+
+
+<img src="TrumpTrends.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/LobbyistsGovernment.pdf">Lobbyists as Government Employees -- Evidence from the Bureaucracy</a>
+
+*With Josh McCrain, Emory University*
+
+Leveraging the staggered pattern of appointments into the Trump administration in a difference-in-difference design, we estimate the returns to connections to key rule makers in the bureaucracy for lobbying firms. Click on title for a working paper.<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p>	A growing body of research examines the transition of government employees into the private sector, commonly known as the revolving door. A common conclusion in this work is that government employees cash in on their experience and, most importantly, their connections to current officials. We focus on two under-studied aspects of the revolving door: 1) the transition of lobbyists back *into* government and 2) the value of connections between lobbyists and government agencies. Exploiting the unexpected victory of Donald Trump in the 2016 presidential election and the staggered timing of appointments into his administration, we find that firms whose lobbyists went back through the revolving door saw 20-70\% increase in revenue, and the increase was larger in Democrat-leaning firms. Our results shed light onto the political economy of the lobbying industry and suggest a need to further study the interaction between lobbying firms and the federal bureaucracy.</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<img src="EmployerDistribution.png" style="width:37%; border:0px solid; margin-right: 20px" align="left">
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/VotingForACareer.pdf">Voting for a Career -- The Revolving Door Moderates the Senate</a>
+
+I examine how the final term voting of senators change, when they are about to walk through the revolving door. They moderate their roll call voting and converge to the ideal point of their future employers.<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p>	I investigate how the revolving door affects voting in the Senate. The literature on final-term problems suggests that senators should become more extreme before they leave office, because they no longer are accountable to voters. Lack of electoral accountability could, however, have different effects depending on the senator's career ambitions. While retiring senators are no longer accountable to anyone but themselves, revolving door politicians will be accountable to their future employers, because they depend on them for post-elective employment. During their final Congress, this should lead revolving door senators to moderate themselves, while retiring ones should grow more partisan. Using data on post-elective career trajectories from 102nd to the 113th Senate, I present fixed effects estimates that back this claim. I show that the effect is driven by senators, who choose to resign, and provide evidence suggesting that the shift happens, because senators anticipate the preferences of their future employer.</p>
+</div>
+
+
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -70,17 +214,18 @@ for (i = 0; i < coll.length; i++) {
 </body>
 </html>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TaxDraft.pdf">[pdf]</a>
 
-
-
-##Other Projects
-
-**Lobbyists as Government Employees -- Evidence from the Bureaucracy**
-
-*With Josh McCrain, Emory University*
-
-
+### Corporate Influence on Public Policy
+<img src="FirmNetwork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
 
