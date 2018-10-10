@@ -2,15 +2,14 @@
 ---
 <br>
 <br>
-My research interests revolve around four main themes: 1) Revolving door politics, 2) corporate lobbying, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
+My research interests revolve around four main themes: 1) Political connections and corporate political influence, 2) revolving door politics, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
 
 <br>
 
+### Political Connections and Corporate Influence on Public Policy
 
+Something insightful on corporate political activity ...
 
-### Revolving Door Politics
-
-It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, we know very little about, whether the so-called revolving door between business and politics changes policy outcomes. In my dissertation, I investigate how 1) the potential for post-elective employment shapes the behavior of US Members of Congress, and 2) firms that hire former Members of Congress can ...
 
 <img src="TaxSaved.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
@@ -75,9 +74,111 @@ use the revolving door to pursue significant economic rents.</p>
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
+<img src="TrumpTrends.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/LobbyistsGovernment.pdf">Lobbyists as Government Employees -- Evidence from the Bureaucracy</a>
+
+*With Josh McCrain, Emory University*
+
+Leveraging the staggered pattern of appointments into the Trump administration in a difference-in-difference design, we estimate the returns to connections to key rule makers in the bureaucracy for lobbying firms. <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p>	A growing body of research examines the transition of government employees into the private sector, commonly known as the revolving door. A common conclusion in this work is that government employees cash in on their experience and, most importantly, their connections to current officials. We focus on two under-studied aspects of the revolving door: 1) the transition of lobbyists back *into* government and 2) the value of connections between lobbyists and government agencies. Exploiting the unexpected victory of Donald Trump in the 2016 presidential election and the staggered timing of appointments into his administration, we find that firms whose lobbyists went back through the revolving door saw 20-70\% increase in revenue, and the increase was larger in Democrat-leaning firms. Our results shed light onto the political economy of the lobbying industry and suggest a need to further study the interaction between lobbying firms and the federal bureaucracy.</p>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<img src="FirmNetwork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/AssetSpecificity.pdf">Asset specificity, corporate protection, and trade policy</a>
+
+*With Mogens K Justesen, Copenhagen Business School*
+
+Using firm-level data on petitions for antidumping protection from 22 WTO jurisdictions, we revisit classical question of whether firms with specific assets gain more protection. We also investigate intra-industry spill over effects.<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p>	We examine the role of firms in shaping trade protection. Firms with specific assets find it more costly to reorganize production in the face of international competition, which makes them lobby more intensively for protection. But decision-makers will not grant unlimited trade protection. This forces companies to compete for protection, which causes it to diffuse within groups of same-good producers. To test this argument, we combine antidumping petitions with financial data on the firms filing them in a unique dataset. Using spatial autoregressive models, we show that companies with specific assets are more likely to be successful when petitioning for antidumping protection and that this decreases protection afforded to competing firms.</p>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+### Revolving Door Politics
+
+It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, we know very little about, whether the so-called revolving door between business and politics changes policy outcomes. In my dissertation, I investigate how 1) the potential for post-elective employment shapes the behavior of US Members of Congress, and 2) firms that hire former Members of Congress can ...
+
+
+<img src="HardWork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a>
 
@@ -114,45 +215,11 @@ I investigate the effect of private sector career prospects on whether US senato
 
 
 
-
-
-<img src="TrumpTrends.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
-
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/LobbyistsGovernment.pdf">Lobbyists as Government Employees -- Evidence from the Bureaucracy</a>
-
-*With Josh McCrain, Emory University*
-
-Leveraging the staggered pattern of appointments into the Trump administration in a difference-in-difference design, we estimate the returns to connections to key rule makers in the bureaucracy for lobbying firms. Click on title for a working paper.<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
-
-
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p>	A growing body of research examines the transition of government employees into the private sector, commonly known as the revolving door. A common conclusion in this work is that government employees cash in on their experience and, most importantly, their connections to current officials. We focus on two under-studied aspects of the revolving door: 1) the transition of lobbyists back *into* government and 2) the value of connections between lobbyists and government agencies. Exploiting the unexpected victory of Donald Trump in the 2016 presidential election and the staggered timing of appointments into his administration, we find that firms whose lobbyists went back through the revolving door saw 20-70\% increase in revenue, and the increase was larger in Democrat-leaning firms. Our results shed light onto the political economy of the lobbying industry and suggest a need to further study the interaction between lobbying firms and the federal bureaucracy.</p>
-</div>
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -192,6 +259,59 @@ I examine how the final term voting of senators change, when they are about to w
   <p>	I investigate how the revolving door affects voting in the Senate. The literature on final-term problems suggests that senators should become more extreme before they leave office, because they no longer are accountable to voters. Lack of electoral accountability could, however, have different effects depending on the senator's career ambitions. While retiring senators are no longer accountable to anyone but themselves, revolving door politicians will be accountable to their future employers, because they depend on them for post-elective employment. During their final Congress, this should lead revolving door senators to moderate themselves, while retiring ones should grow more partisan. Using data on post-elective career trajectories from 102nd to the 113th Senate, I present fixed effects estimates that back this claim. I show that the effect is driven by senators, who choose to resign, and provide evidence suggesting that the shift happens, because senators anticipate the preferences of their future employer.</p>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+### Political Responsiveness
+
+Something about responsiveness.
+
+
+<img src="Muni.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/DanishMuni.pdf">Can Citizens Set City Policy? Evidence From A Decentralized Welfare State </a>
+
+*With Martin Vinæs Larsen, Aarhus University.*
+
+
+Short description. <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p> Municipal governments supposedly empower citizens, giving them the ability to shape the political organization of their local community. In spite of this, we know little about whether municipal governments are in fact responsive to the policy views of municipal electorates. In this study, we look at whether the policy implemented by local politicians actually responds to changes in the public mood. To do this, we compile a unique and comprehensive dataset of local fiscal policy, which we use to construct municipal-level estimates of fiscal policy conservatism. This detailed policy data is then linked to an indicator of local ideological sentiment. We find strong evidence for dynamic responsiveness: when preferences in a municipality changes public policy responds.</p>
+</div>
+
+
+### 
 
 
 <script>
@@ -213,19 +333,3 @@ for (i = 0; i < coll.length; i++) {
 
 </body>
 </html>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-### Corporate Influence on Public Policy
-<img src="FirmNetwork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
-
-
