@@ -17,7 +17,7 @@ Something insightful on corporate political activity ...
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TaxDraft.pdf">The Revolving Door and Taxes -- Political Connections Decrease Corporate Tax Rates</a>
  
 
-I investigate the effect of political connections on regulatory forbearance by examining the interactions between firms and the Internal Revenue Service. Click on title for a working paper. <!DOCTYPE html>
+I investigate the effect of political connections on regulatory forbearance by examining the interactions between firms and the Internal Revenue Service. <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -182,7 +182,7 @@ It routinely attracts both attention and condemnation, when elected officals lea
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a>
 
-I investigate the effect of private sector career prospects on whether US senators choose to walk through the revolving door. Click on title for a working paper. <!DOCTYPE html>
+I investigate the effect of private sector career prospects on whether US senators choose to walk through the revolving door.  <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -266,6 +266,9 @@ I examine how the final term voting of senators change, when they are about to w
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
 ### Political Responsiveness
 
@@ -279,7 +282,7 @@ Something about responsiveness.
 *With Martin Vinæs Larsen, Aarhus University.*
 
 
-Short description. <!DOCTYPE html>
+We show that local fiscal policy in Denmark responds strongly to voter preferences. The effect of a preference changes lasts as long as nine years into the future. <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -310,8 +313,61 @@ Short description. <!DOCTYPE html>
   <p> Municipal governments supposedly empower citizens, giving them the ability to shape the political organization of their local community. In spite of this, we know little about whether municipal governments are in fact responsive to the policy views of municipal electorates. In this study, we look at whether the policy implemented by local politicians actually responds to changes in the public mood. To do this, we compile a unique and comprehensive dataset of local fiscal policy, which we use to construct municipal-level estimates of fiscal policy conservatism. This detailed policy data is then linked to an indicator of local ideological sentiment. We find strong evidence for dynamic responsiveness: when preferences in a municipality changes public policy responds.</p>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-### 
+
+
+### Political Methodology and Measurement
+
+Something on methods and measurement
+
+
+<img src="WordWeight.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+Scaling Political Positions from Text -- Assumptions, Methods and Pitfalls
+
+*With Robert Klemmensen, University of Southern Denmark*
+
+*Chapter in: Luigi Curini & Robert Franzese (Eds.): SAGE Handbook of Research Methods in Political Science & International Relations (Forthcoming).*
+
+
+
+We review standard methods for scaling political positions from text. We outline how the techniques relate to measurement theory in general, review assumptions and illustrate their use. <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p> The abstract.</p>
+</div>
 
 
 <script>
