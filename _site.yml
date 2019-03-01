@@ -1,5 +1,6 @@
 name: "my-website"
-fontsize: 11pt 
+fontsize: 11pt
+site: bookdown::bookdown_site
 navbar:
   title: "Benjamin CK Egerod"
   left:
