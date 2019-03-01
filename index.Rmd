@@ -50,9 +50,9 @@ Phone: (+45) 2715 1536
 
 </div>
 <div class="column-right">
-I am a PhD Candidate at the University of Copenhagen, and a Bradley Fellow at the University of Chicago. I received the Stigler Dissertation Award from the University of Chicago's Stigler Center in the year 2018/19. I specialize in positive political economics and political methodology. 
+I am a PhD Candidate at the University of Copenhagen, and a Bradley Fellow at the Booth School of Business, University of Chicago. I received the Stigler Dissertation Award from the University of Chicago's Stigler Center in the year 2018/19. I specialize in positive political economics and political methodology. 
 
-My research focuses on the mechanisms that forces policy makers to respond to pressure from the public and special interests alike. This is a classical themes in political science which I attempt to shed new light on by deducing new testable implications as well as by using previously underutilized data sources. To this end, I strive to make methodological advances within measurement theory and causal inference with observational panel data. 
+My research focuses on the mechanisms that forces policy makers to respond to pressure from special interests. This is a classical theme in political science which I attempt to shed new light on by deducing new testable implications as well as by using previously underutilized data sources. To this end, I strive to make methodological advances within measurement theory and causal inference with observational panel data. 
 
 In my dissertation, I focus on the United States Congress and investigate how post-elective career ambitions change the behavior of legislators, while they are still in office, and how political connections can benefit large American firms, for instance, by changing the way bureaucrats enforce rules against them. 
 
