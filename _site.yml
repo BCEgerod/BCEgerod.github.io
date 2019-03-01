@@ -19,5 +19,3 @@ navbar:
     href: https://www.linkedin.com/in/benjamin-carl-egerod-a5b15363/
 output:
   html_document:
-  encoding: UTF-8
-  site: bookdown::bookdown_site
