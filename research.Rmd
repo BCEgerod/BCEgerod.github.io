@@ -2,7 +2,7 @@
 ---
 <br>
 <br>
-My research interests revolve around four main themes: 1) Political connections and corporate political influence, 2) revolving door politics, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
+My research interests revolve around four main themes. The common denominator is an interest in whether and why elected officials respond to pressures from different groups in society: 1) Political connections and corporate political influence, 2) revolving door politics, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
 
 <br>
 
@@ -16,6 +16,8 @@ Something insightful on corporate political activity ..
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TaxDraft.pdf">The Revolving Door and Taxes -- Political Connections Decrease Corporate Tax Rates</a>
  
+ 
+Awarded the Stigler Dissertation Award by the Stigler Center at the University of Chicago's Booth School of Business.
 
 I investigate the effect of political connections on regulatory forbearance by examining the interactions between firms and the Internal Revenue Service. <!DOCTYPE html>
 <html>
@@ -129,7 +131,7 @@ Leveraging the staggered pattern of appointments into the Trump administration i
 <img src="FirmNetwork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
 
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/AssetSpecificity.pdf">Asset specificity, corporate protection, and trade policy</a>
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/AssetSpecificity.pdf">Asset specificity, corporate protection, and trade policy</a> (Under Review)
 
 *With Mogens K Justesen, Copenhagen Business School*
 
@@ -164,6 +166,49 @@ Using firm-level data on petitions for antidumping protection from 22 WTO jurisd
   <p>	We examine the role of firms in shaping trade protection. Firms with specific assets find it more costly to reorganize production in the face of international competition, which makes them lobby more intensively for protection. But decision-makers will not grant unlimited trade protection. This forces companies to compete for protection, which causes it to diffuse within groups of same-good producers. To test this argument, we combine antidumping petitions with financial data on the firms filing them in a unique dataset. Using spatial autoregressive models, we show that companies with specific assets are more likely to be successful when petitioning for antidumping protection and that this decreases protection afforded to competing firms.</p>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+
+<img src="Validate.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/MoneyAndInfluenceInTheEU_draft2.pdf">Does Money Matter When Firms Lobby? Firm-level Evidence from Consultations at the
+EU Commission </a> 
+
+*With Anders Woller, University of Copenhagen*
+
+... .<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 20%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 12px;
+}
+
+
+.content {
+    padding: 0px;
+    display: none;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button style="color:black" class="collapsible">Open Abstract</button>
+<div class="content">
+  <p> This study presents the first firm-level quantitative evidence that companies with high operating performance are more likely to persuade the EU Commission to adhere to their preferences. We do this by collecting data on individual companies active across 45 consultation procedures from 2005-2013 on issues related to the internal market in the EU, totaling more than 300 companies. We propose three distinct mechanisms accounting for the association: companies with high operating performance are 1) able to conduct investments in the economy, upon which decision-makers rely 2) likely to be knowledgeable about their respective sector -- information which decision-makers demand 3) capable of mounting opposition if decision-makers are unresponsive to their needs. Our results support the first proposed mechanism: politicians are more responsive to companies with high operating performance as it allow companies to invest in employment opportunities. Finally, we show that high salience of an issue, following times of crisis, significantly limits the influence of big business. </p>
+</div>
 
 <br>
 <br>
@@ -171,7 +216,12 @@ Using firm-level data on petitions for antidumping protection from 22 WTO jurisd
 <br>
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Revolving Door Politics
 
@@ -180,7 +230,7 @@ It routinely attracts both attention and condemnation, when elected officals lea
 
 <img src="HardWork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a>
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a> (Under Review)
 
 I investigate the effect of private sector career prospects on whether US senators choose to walk through the revolving door.  <!DOCTYPE html>
 <html>
@@ -278,6 +328,8 @@ Something about responsiveness.
 <img src="Muni.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/DanishMuni.pdf">Can Citizens Set City Policy? Evidence From A Decentralized Welfare State </a>
+ 
+(Invited to revise and resubmit at the Urban Affairs Review)
 
 *With Martin Larsen, Aarhus University.*
 
@@ -334,7 +386,7 @@ Scaling Political Positions from Text -- Assumptions, Methods and Pitfalls
 
 *With Robert Klemmensen, University of Southern Denmark*
 
-*Chapter in: Luigi Curini & Robert Franzese (Eds.): SAGE Handbook of Research Methods in Political Science & International Relations (Forthcoming).*
+*Invited chapter for: Luigi Curini & Robert Franzese (Eds.): SAGE Handbook of Research Methods in Political Science & International Relations (Forthcoming).*
 
 
 
