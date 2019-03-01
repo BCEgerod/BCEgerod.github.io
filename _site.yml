@@ -1,0 +1,20 @@
+name: "my-website"
+fontsize: 11pt
+output_dir: "."
+site: bookdown::bookdown_site
+navbar:
+  title: "Benjamin Egerod"
+  left:
+  - text: "Research"
+    href: research.html
+  - text: "Teaching"
+    href: teaching.html
+  right:
+  - icon: fa-google fa-lg
+    href: https://scholar.google.dk/citations?user=GGfIT8UAAAAJ&hl=da
+  - icon: fa-github fa-lg
+    href: https://github.com/BC-Egerod
+  - icon: fa-twitter fa-lg
+    href: https://twitter.com/BCEgerod
+output:
+  html_document:
