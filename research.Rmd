@@ -279,7 +279,7 @@ Something about responsiveness.
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/DanishMuni.pdf">Can Citizens Set City Policy? Evidence From A Decentralized Welfare State </a>
 
-*With Martin Vinæs Larsen, Aarhus University.*
+*With Martin Larsen, Aarhus University.*
 
 
 We show that local fiscal policy in Denmark responds strongly to voter preferences. The effect of a preference changes lasts as long as nine years into the future. <!DOCTYPE html>
