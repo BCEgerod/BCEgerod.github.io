@@ -1,0 +1,339 @@
+---
+title: "Scaling Political Positions from Text - Assumptions, Methods and Pitfalls"
+author: "Benjamin Egerod and Robert Klemmensen"
+output: 
+    pdf_document:
+    fig_caption: yes
+fontsize: 12pt
+linestretch: 1.3
+bibliography: bib.bib
+csl: ajps.csl
+header-includes: \usepackage{setspace}\usepackage{lscape}\usepackage{pdflscape}\usepackage{amsmath}\usepackage[utf8]{inputenc} \usepackage{float}\usepackage{standalone}\usepackage{caption}\usepackage{pdfpages}\usepackage{sgame}\usepackage{tikz}\usepackage{setspace,caption} \usepackage{graphicx} \usepackage{epstopdf} \DeclareGraphicsExtensions{.pdf,.eps} \setlength{\parindent}{2em} \setlength{\parskip}{0em}
+---
+\begin{abstract}
+\noindent In this chapter we review the different automated techniques for scaling text most commonly used in political science. We start by relating text scaling to the broader field of measurement models aimed at estimating latent positions. Through this comparison, we outline the assumptions underlying the scaling of political text. We proceed to show how the most commonly used scaling techniques build statistical models of text through these assumptions. In doing so, we also show the utility of the various techniques as well as their vulnerable spots. We then focus on two assumptions that are common across all techniques: that the texts are sufficiently a) long and b) similar in the way meaning is ascribed to words. Through simulations, we investigate how sensitive various techniques are to violations of these assumptions. We conclude by discussing how the need for awareness about model assumptions illustrates how automated scaling should not replace human judgement. We also discuss how a) techniques for estimating word and text embeddedness may improve our scaling techniques by incorporating context, and b) the need for conceptualizing measurement error arising from wrong models.
+
+\end{abstract}
+\newpage
+
+# Why Do We Want to Scale Texts?
+
+Virtually all instances of political conflict or competition can be thought of in spatial terms. In everyday language as well in academic discourse we use metaphors relating to space when describing politics. Indeed, it is difficult to even talk about politics without "using the notions of position, distance, and movement" [@benoit2006party, p. 12]. In politics, the left-right distinction -- by definition a spatial notion -- may be the most enduring organizing principle [@bobbio1996], and the underlying conceptualization of political preferences distributed along different latent dimensions is closely linked to the spatial models of politics often associated with @downs1957, @smithies1941optimum and @hotelling1990stability. While the prevalence of the left-right distinction has made it natural to focus on political ideology, most instances concerning differences between preferences can be thought of in spatial terms. For instance, interest group scholars often conceptualize the degree to which special interests attain their preferences in terms of how policy proposals move relative to the stated positions of groups [@dur2008measuring;@bernhagen2014measuring;@kluver2009measuring]. Indeed, there is good reason to believe that spatial models are not just good ways of representing multidimensional data, but good approximations of how humans think about preferences [@armstrong2014]. Therefore, considerable amounts of energy has been devoted to developing methods, which reliably and validly can place actors in political spaces. Scaling methods are devoted to precisely that, and have a long history of successfully placing legislators political parties and judges in ideological spaces (e.g. @poole2000congress, @poole1985spatial and a@martin2002dynamic). More recently, the surge in computational power and availability of new forms of data has provided the possibility of scaling political preferences of extremely diverse sets of actors [@bonica2014mapping;@bonica2013ideology;@barbera2015birds;@bond2015quantifying;@crosson2018estimating]. 
+
+It is in this landscape the scaling of political positions from text fits in. The techniques that are used to scale texts are in large part parallel to the ones used for estimating positions from other data sources, and the use of text scaling has evolved in a similar fasion. While scaling positions from hand-coded databases has a long and successful history [@budge2001], we have seen a surge in the application of computationally intensive methods for scaling texts without first manually coding them. This is both due to the explosion of texts available, and to an increase in the techniques and the computational power that allows us to use them [@martin2017bias;@monroe2004talk;@lo2016ideological;@slapin2008;@laver2003extracting]. Computational text scaling offers an extremely wide range of potential applications, and while its use is in constant growth, and new estimators are continuously invented and applied to new and innovative data sources, there is no doubt that the we have still to see the height of its use.
+
+This chapter is dedicated to introducing computational techniques for scaling  policy positions from political texts. Because text scaling is similar in theory to other forms of scaling, but also to presents its own challenges, we do not only introduce the reader to how common models can be applied, but also the particular assumptions they make -- and how they can be broken.
+
+We start by discussing how text scaling relates to the broader field of measurement theory as it has evolved in political science, and the core assumptions that are needed to scale a set of texts. This structures our review of specific methods for text scaling. Here we discuss how techniques vary in their assumptions, and illustrate their use with a diverse set of political texts. We discuss the work done by @laver2003extracting, which introduced the use of automatic scaling of text to political science. We proceed to review the Poisson scaling model [@monroe2004talk;@slapin2008], which scales policy position with practically no input from the researcher. The techniques we discuss in this chapter represent but a small subset af the universe of potential scaling techniques. Therefore, we also discuss how each estimator has been extended. While it is impossible to cover all possible estimators in a single chapter, we hope that this chapter can serve as a starting point to for the reader. Finally, to illustrate some of the potential pitfals when scaling texts, we include two simulation studies investigating a) how short texts can be and b) how differently they can use their words, before common methods no longer will be able to meaningfully place texts in space. The final section concludes with a discussion of how our existing toolbox can be extended by incorporating new methods for taking word context into account, and how we can think about measurement error more productively than by simply discarding models.
+
+# Text Scaling As Inference About Latent Positions
+
+The goal of all scaling methods is to use some observed set of outcomes to draw inferences about an actor's (in the widest sense of the word) unobservable position on a latent dimension relative to other actors. Position is here to be understood as the political preference on some dimension. To get at such a position, the observed outcomes must reveal some kind of preference on the part of the actor. While this holds regardless of the nature of the observed data and the context in which it was produced, different types of data obviously require varying models of the data generating process. Without a good theoretical model of how the observed outcome can discriminate between different latent positions, it simply becomes unclear what exactly it is that is being scaled. The spatial model of politics is probably the widest used model, to relate behaviors, inclunding texts, to positions, and while it obviously is not the only possible model of any single data generating process, it is highly appealing because it is well-tested through years of refinement. In scaling techniques that rely on variations of the spatial model, actors are assumed to choose the outcomes that are most closely aligned with their ideal point (their political preference).[^1] E.g., voters vote for the candidates, legislators cast their roll call vote for the policies, and Facebook users follow the political pages that are most closely aligned with their preferences. Actors recieve monotonically decreasing utility from choosing outcomes (candidates, policies, Facebook follows) as they increase in distance from their ideal point. The process of choosing a candidate, a roll call vote or a page follow, however, is inherently random in nature, which is typically modeled with some distributional assumption (for a more thorough review, see @armstrong2014).
+
+When scaling the political positions of a corpus of texts, similar assumptions are needed, and the spatial model generalizes well to this setting. Here, we can view the choice of words  as the outcome. Whenever certain statements are associated with particular political positions, we can use them to discriminate between positions in a certain political space. In other words, the use of a particular (set of) word(s) provides us with a revealed preference for a specific (kind of) policy. Whenever we can think of the data generating process in these terms, the spatial model of politics is likely to provide a good approximation, and scaling  a set of documents might be feasible. 
+
+[^1]: This is the so-called proximity based model of space. While a *directional* model obviously is possible as well none of the currently implemented models use it [@armstrong2014].
+
+
+
+## Which Assumptions are Needed to Scale a Text? 
+
+To infer from the text in a document to a political position, we need assumptions about three stages in the data generating process, which together operationlizes the spatial model of politics in the setting of text scaling. First, we make assumptions about the author's private preference and intent with the analyzed document. The second set of assumptions is about how those prefereces are expressed in any particular document, and how that document relates to the others in the corpus, which in combination make up the relative political space, we want to estimate. 
+
+While the first two sets of assumptions are about modelling the causal process that relates text generation to political position, we also need assumptions to translate text into data and from data to scales. Specifically, we need a statistical model that operationalizes the considerations in the underlying causal model about how preferences are communicated in text, and how this relates to the latent position of the document. Table 1 presents the stylized version of the full text and data generating process proposed in @benoit2009.   
+
+
+\begin{center}
+\includegraphics{table.pdf} 
+\end{center}
+
+**True Preferences & the Politics Filter:** Even though it is called text scaling, what we most commonly want to  draw inferences about is not the political position articulated in the text, but the preference held by the author (even though there will be exceptions to this, as we shall see). But if the cost to articulating a position is low, authors' might engage in cheap talk. Conversely, if costs are high, they might choose not to articulate the position for strategic reasons. All of the techniques, we review here, assume that authors do not censor their statements for political reasons. Therefore, we sideline this discussion -- even though it obviously can cause significant measurement error. 
+
+**Model of the Political Space:** Second, we need to make assumptions about how any given author translates her position into text, and how that relates to the other authors in the corpus.  Specifically, the language used in the texts must discriminate between the intended messages of different authors. In other words, the authors should recieve varying levels of utility from their choice of words, and this variation should be related to the political space, we want to measure. If authors of different preferences recieve the same utiliy from similar choices of words, we cannot use the texts to discriminate between their positions. The documents should be informative about the political differences, we seek to estimate [@slapin2014words]. Particularly in contexts where there are strong common norms about how to phrase a document (as with highly technical legislative or legal documents) or the texts do not communicate any preference at all, it can be difficult to scale documents. 
+
+Second, and regarding the relation between documents, a set of texts is only be scalable, if they can be placed in the same euclidian space. This is an often undiscussed assumption, and it can be broken in three ways. One way is if political preferences are discrete views, not matters of continuous differences. Another violation would be if the language used in the documents is incomparable in the way meaning is ascribed to words. Analyzing text that is produced under very different conditions or in varying contexts; that are from different time periods or actors; or have very different audiences in mind  would make it difficult to place them relative to each other -- let alone in the same space [@slapin2014words].  Finally, we need assumptions about the dimensionality of the space. 
+
+
+**Stochastic Writing Process:** Whereas the particular spatial model constitutes the assumptions about the systematic component of the data generating process, scaling also requires assumptions regarding the stochastic part. An important assumption in most scaling techniques is that the analyzed units are conditionally independent. When the unit of analysis is word frequencies, this is labeled 'the bag of words' assumption [@grimmer2013]. Conditional on the statistical model, any relation between the use of words is purely noise, and their ordering is inconsequential to the positions that we obtain through our scaling techniques.  This assumption allows us to determine differences across texts based on the relative frequencies with which words occur in a text. The main difference in the scaling techniques we review in this chapter is how these frequencies are converted into positions. While this assumption is certainly wrong, it provides an effective simplification, and often scaling techniques work well despite the obviously wrong assumption [@grimmer2013]. 
+
+Finally, the writing process is inherently stochastic: the same writer would not write the same text, if she sat down to communicate the same message repeatedly. Even if a perfect model of political text could be constructed, and no assumptions were violated at all, the randomness of the writing process would still produce uncertainty in the resulting position estimates. Typically -- though not always -- this uncertainty is estimated by adding assumptions about the distributional form the error takes. 
+
+
+**The Model Specification:** Finally, each assumption about the data generating process has to be incorporated into a combined scaling model. This requires assumptions about how the use of words is related to the latent policy position through a functional form and a statistical distribution. This is the step which operationalizes the theoretical considerations in the text generation process. If we use frequencies of individual words, we need to specify our expectations about how a change in frequency helps us discriminate the underlying position: is the relationship e.g. log-linear? How does utility decrease as words are further removed from the author's ideal point? We should also consider which other parameters (such as controls, prior information etc.) to include in the model. Together, the assumptions about functional form, distribution and relations between words represent principal statistical assumptions, which implement the theoretical model of text generation. 
+
+Most of the estimators, we will discuss here, are highly greedy in their data requirements, however. Thus, an additional and crucial -- but often forgotten -- assumption is that the texts, we apply scaling techniques to, contain sufficient information for the technique to pick up differences across texts. The limiting factor is of course how words are distributed in the term document matrices which are the analytic underpinnings of the methods we discuss. There has to be different distributions of words, and these distributions have to be meaningfully linked to the latent dimensions that we are trying to estimate. 
+
+##Summing Up
+
+In this section, we discussed how *text* scaling in particular relates to the broader discipline of estimating latent political preferences. We saw how this requires assumptions about the political context, and how it shapes the manner in which authors state their preferences through text. We discussed which assumptions are needed to implement a theoretical model of the political space in the context of text data, and how this forms the basis of scaling the positions of a set of documents. It is worth reiterating that while all of these assumptions are wrong, the model might still be useful in the sense that the estimate of the latent variable may correlate well with the true political preference of an author. 
+
+In the next sections, we review the scaling techniques that have been used by political scientists. We relate each technique to the spatial model of politics, and discuss its assumptions about how observed text is related to the author's latent position. This continuously reminds us that while most of the *visible* discretion when scaling a text is contained in the choice of unit of analysis and preprocessing, the choice of even off-the-shelf scaling techniques involves making a number of model assumptions.
+
+# Using  Machine Learning to Scale Document Positions 
+
+Before analysis we need to make the choice of scaling technique, each of which embodies a set of assumptions about the data generating process. While most techniques resemble statistical ideal point models, we can further distinguish between supervised and unsupervised models. Supervised models use human input, typically in the form of a set of training texts (or reference texts). These estimates can then be used to predict the positions of texts the model has not encountered previously. The training set also serves to define the policy space that the researcher seeks to estimate. Unsupervised techniques simultaneously learn about the latent space and estimate document positions in it, without input from the researcher.
+
+When using any kind of computational technique, preprocessing of the documents is the first step in the modelling process, as it involves making the decision about where in the text we expect the signal about policy positions to be located. A first problem that any scaling needs to deal with is how to translate words to numeric values. That is, what is our unit of analysis, and how do we -- in practical terms -- quantify the prevalence of certain phrases? The techniques we review in the following sections, have traditionally used counts of  unigrams (individual words) as their units of analysis. This, however, is not set in stone, and one could potentially use any kind of n-gram. Additionally, noise is often sifted out by removing extremely common words (so-called "stopwords"), numbers, punctuation and symbols as well as by reducing words to their stem. Especially for unsupervised models it can be a good idea to remove highly infrequent words. It is extremely important to note that all of these choices regarding preprocessing have consequences, and should not reflect some standardized procedure, but be seen as a step in building the model [@denny2018text]. The output of this is typically a document-term matrix, where documents are identified along the in rows, terms (words, bi-grams, n-grams etc.) are in columns, and the frequencies are in the cells. This is the input on which we estimate our statistical scaling models.[^4] We use the quanteda package [@benoit2016quanteda], which is available in R, and comes with an excellent online tutorial that walks the reader through each step in a computational scaling model.
+
+An important caveat when using ideal point models for scaling is that even if all assumptions held, and we could think of a perfect statistical model of text, the estimators would still be biased and inconsistent due to the incidental parameters problem -- there are simply too many parameters relative to observations. In this regard, it is important to note that the use of computational techniques is no substitute for careful reading of the text and understanding of the subject matter. Automated scaling serves to amplify human ability -- not replace it -- and its use should be subject to careful subject-specific validation [@grimmer2013].
+
+[^4]: While this is typically what we model, it is not the only concievable form.
+
+# Supervised Techniques -- Wordscores
+
+The Wordscores algorithm is a one-step approximation of a reciprocal averaging estimator for correspondance analysis on words [@lowe2008]. Originally developed by @laver2003 (LBG), it was pioneering because it was one of the first attempts to introduce computational scaling techniques to a wider political science audience. And the model has been hugely successful for a number of reasons. First of all the model is easy to implement because the authors made their software available to the wider public. Secondly, it relies on prior information in the form of reference texts with known positions. This makes it very stable compared to, e.g., unsupervised techniques. This also partially defines the the latent political space before estimation, which makes it extremely flexible. Third, the algorithm is very clear and simple, which further broadens the group of potential users.
+
+## The Wordscores Model & Assumptions
+
+Wordscores begins from the premise that we have access to a set of texts *R* with known positions on the dimension we are interested in. Hence the precondition for a Wordscores model is that we have reliable and valid measures of the positions in a set of reference texts. Wordscores works through the core assumption that each word *w* has a specific political position, and that the position of a document can be found by averaging over these word scores. The simple idea is that if we first ascribe positions to each word *w* by observing their frequencies in our reference texts *r*, where document positions are known, then we can use those word scores to predict the positions of out-sample texts by simply observing frequencies of words that also occurred in the reference texts. This is done by developing a measure of the probability of observing a given word *w* in our reference texts *r*, and using this to infer the positions of a set of out-of-sample texts from their word frequencies.
+
+Specifically, LBG propose to calculate a score $S$ for each individual word in the text using the following equation.
+
+\begin{equation}
+S_{wd} = \sum_r{P_{wr} \cdot A_{rd}}, 
+\end{equation}
+
+where $P_{wr}$ is the probability ($P$) of word ($w$) ocurring in text ($r$), and $A_{rd}$ is the position given to reference text *r* on the dimension $d$. Now we have values for each word in our text and we can therefore use the in-sample word scores to infer the position of the out-of-sample texts by using the frequencies of the word, whose positions we know:
+
+\begin{equation}
+S_{vd} = \sum_w{ F_{wv} \cdot S_{wd}},
+\end{equation}
+
+where $F_{wv}$ is the word frequency in the out-sample texts $v$.
+
+@lowe2008 outlines the conditions under which bias in policy positions estimated in this fashion is minimized:  \
+
+
+* Positions of reference texts are equally spaced and extend over the range of the positions of individual words.[^5]
+* Positions of individual words in the reference texts are equally spaced and extend *past* document positions in both direction.
+* All words are equally informative.  \       
+
+While it is obvious that the first two conditions cannot hold simultaneously in any real-world setting, they provide guidance, when choosing reference texts in a way that minimizes bias. Specifically, the conditions suggests that there should be sufficient overlap between distributions of words in the reference texts, and that they should include a sufficient range of potential word positions in the out-of-sample texts. 
+
+As mentioned previously, a strong assumption when scaling in general is that the vocabulary does not change radically over texts. When using Wordscores alongside a good choice of reference texts (defined by the above conditions) estimates are generally less sensitive to differences in the meanings and uses of words. We illustrate this point later.
+  
+Because the core assumption in Wordscores is that each word has a political position, the link to the spatial model of politics is very clear. Each word, however, is assumed to be equally informative. Because Wordscores in its original form does not distinguish between words that occur often due to linguistic reasons and those that are used preferentially by centrist parties, this tends to shrink Wordscores estimates towards the average [@lowe2008].
+
+
+
+
+
+[^5]: Additionally, in the statistical model for Wordscores proposed by @lowe2008, where words differ in informativeness, text and word positions should be closely spaced relative to each word's discriminatory power (informativeness). 
+
+## Using Wordscores
+
+To illustrate the use of Wordscores, we draw on data from @baturo2013life, who use speeches by Russian governors to estimate how aligned they are with Putin and Medvedev, respectively. By leveraging the fact that the main policy dimension in a Wordscores estimation is defined a priori through the use of reference texts, they are able to estimate where each governor's address to the local parliament falls on a scale from Medvedev to Putin. This use of prior information is what makes supervised techniques like Wordscores extremely flexible. In terms of the spatial model of politics, we can think of the underlying policy space as one in which two leaders compete for control, and state slightly different policy preferences. The assumed utility function of the authors is one, where the governors prefer to mimic the policy position of the most powerful national leader. Thus, we have defined a coherent policy space, and have a clear idea about how written words reveal a preference. In combination, this provides us with a foundation for maping words onto a latent position in this particular space. This is an interesting case, in part because it shows how broadly we can construe the spatial model of politics outside. An additional interesting feature is that it relies on authors to mask their true preferences -- something that they are assumed not to do in most applications estimating actual ideology.
+
+We use the texts made available by @baturo2013life, which excludes segments on foreign policy. Otherwise, the only preprocessing we do is to remove punctuation. We set the reference scores of Putin and Medvedev to be 1 and -1, respectively. Thus, we fully replicate the original study. Figure \ref{fig:rus} shows how alignments estimated through Wordscores changed over time.
+
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{Rus_WS.eps} 
+\caption{On A Scale from Medvedev to Putin. \emph{Note: Each point represents the Wordscores estimate of a governor's speech at a given point in time. The dimension is identified using the most recent parliamentary address by Medvedev (reference score = -1) and Putin (reference score = 1), respectively. The solid blue line is a loess smoother, and the shaded region is a 95 pct. pointwise confidence interval.}}
+\label{fig:rus}
+\end{center}
+\end{figure}
+
+To validate the Wordscore estimates, we follow @baturo2013life and use monthly expert evaluations of how powerful Putin and Medvedev are, respectively. To get a direct estimate of partisan alignment, we compute the difference between the Wordscores estimate and Putin's reference position. We use the monthly averages of this difference to facilitate comparison with the expert survey. Figure \ref{fig:rus2} shows the results. It is clear that when the average governor's speech is more aligned with Putin, expert perception of Medvedev's influence is lower. The correlation is strong and precisely estimated. The correlation between expert perception and the alignment of governor speeches with Putin's position is somewhat lower. This is likely, because there is relatively little variation in both estimates of Putin's influence -- he remains continuously powerful by both estimates.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{WS_vs_exp.eps} 
+\caption{Expert Perception and Governor Speeches.\emph{Note: The figure shows the correlations between expert perception of Medvedev's and Putin's power, respectively, and the Wordscores estimate of the average governor's alignment with Putin. The solid blue lines are loess smoothers, and the shaded regions are 95 pct. pointwise confidence intervals.}}
+\label{fig:rus2}
+\end{center}
+\end{figure}
+
+
+## Extensions to Wordscores
+
+The original incarnation of Wordscores was strong in its simplicity, but made many of its assumptions implicitly. @lowe2008 clarifies the underlying assumptions and provides a statistical model for Wordscores, which also serves to relate it to the broader family of statistical ideal point estimators and correspondance analysis. @perry2017scaling implements a scaling technique using an affinity class model, which turns out to be almost identical to the original Wordscores model, and solves some of the problems identified in @lowe2008.
+
+
+A second issues that has drawn some attention is how to transform the raw scores obtained by the procedure described above to the same scale used to score the reference texts. In their original article LBG assume that the raw scores for the reference texts have the correct mean, but that the variance is incorrect. @lowe2008 argues that this assumption might lead to biased scores, because of the shrinkage discussed above. @martin2008 criticize the original transformation arguing that there the original transformation is dependent on the choice of reference text leading to the uncomfortable position that any desired result could be obtain provided that the right combination of references text are chosen. Consequently, they propose a transformation of the raw scores which build on the relative distance ratios using two anchoring texts which serve as the unit in which all other positions are expressed in relation to. @lowe2008 argues that researchers are then confronted with a choice when choosing which transformation to use. Either we use the original LBG transformation is dependent on the reference texts and is indifferent to the virgin texts while the opposite is true of the Martin-Vanberg transformation.
+
+
+# Unsupervised Techniques -- Wordfish
+
+Wordfish  (introduced in @slapin2008) is an unsupervised machine learning algorithm, which is based on a Poisson item response theory (IRT) model [@lowe2015vignette]. Being unsupervised, it simultaneously estimates policy positions and learns the policy space using only the texts provided and no external information in the form of virgin texts or anchoring [@grimmer2013]. While this is a strength in many aspects, it requires strong modelling assumptions and presents challenges, particularly in regards to validation of the particular policy scales and the dimension as such [@grimmer2013;@lowe2013validating]. In this section, we briefly introduce the statistical model underlying Wordfish, its assumptions as well as how they can be broken, and how a Wordfish model can be estimated and interpreted. 
+
+## The Wordfish Model & Assumptions
+
+The Wordfish estimator assumes the data generating process to be as follows: 
+
+\begin{gather*}
+	y_{ij}\sim Poisson(\lambda_{ij})\\
+	\lambda_{ij}=exp(\alpha_{i} + \psi_{j} + \beta_{j}*\omega_{i})
+	\end{gather*}
+
+Where \emph{y} is the count of word \emph{j} in the position document of actor \emph{i}. \emph{y} is assumed to be drawn at from a Poisson distribution and connected through its mean, $\lambda$, to the systematic component, where $\omega$ is the the estimated position of document *i*. $\psi$ is a word fixed effect, which signifies the frequency of word *j*, when a document expresses a center position on the estimated scale (the difficuelty parameter in IRT language).  $\beta$, a word's weight in estimating positions, is an estimate of how sensitive the use of a word is to the political position. In IRT, it is called the discrimination parameter, because it measures how the latent position parameter changes in response to word frequencies. It is parallel to a variable's loading in factor analysis [@jackman2001multidimensional].  $\omega$ is the position of actor \emph{i} as estimated through its position document. Finally, this leaves $\alpha$, a set of document fixed effects. Estimation is done by iterating over conditional maximum likelihoods.[^6] 
+
+
+[^6]: This is where the informativeness of the text corpus is particularly important: for estimation to be done, there has to be enough data for the curvature of the log likelihood to be approximately quadratic[@lowe2013validating].
+
+
+The Wordfish requires a number of the previously introduced assumptions about the underlying spatial model.  However, especially dimensionality is key to the Wordfish model, and it uses a different statistical operationalization than Wordscores. 
+
+**The Statistical Model**: Wordfish operates under the assumption that the generation of words in a text -- conditional on the model -- follows a Poisson process. This has consequences for estimation of both the latent position parameter and the uncertainty of all quantities in the model. First, regarding parameter estimation, it translates into an assumption about the functional form of the relation between word frequency and the latent parameter being log-linear. The model specification introduced above implies assuming monotonicity and that the weight of each word must be the same in any subgroup with the same latent parameter (in IRT language; that there is no differential item functioning (DIF)).  The former would be violated in situations where word weights do not always increase or decrease with the latent parameter. The latter violation occurs, if two groups with the same policy position use the same word differently. 
+
+Second, assuming a Poisson process implies that the variance of the rate of the word count is equal to its expected rate. This is assumption will be broken in the presence of both under- and overdispersion as well as structural zeros (when there is zero probability of a word occurring in a text). This induces well-known problems of underestimation of the uncertainty in Poisson models for count data [@king1998unifying], which translate directly into the Wordfish setting [@lowe2013validating]. In practice, violations of the distributional assumption will also lead to poor coverage [@lowe2011estimating].
+ 
+
+**(Uni)dimensionality of the policy space**: While all scaling techniques require assumptions about dimensionality, the unsupervised ones -- like Wordfish -- are particularly vulnerable, because they learn about the policy space without input from the researcher.[^7] If a researcher misspecifies dimensionality,  she risks estimating a policy dimension, which is either meaningless or not the one, she is interested in. There is a number of reasons, why this is a risk. When the generative model specifies a unidimensional policy space, when it really is multidimensional, or the word weights are misspecified (for instance in the presence of DIF), we risk misspecifying the policy dimension. But even if all modeling assumptions hold, the dimension identified by Wordfish might simply be wrong. First, word use in texts adressing the same concerns are likely to be highly correlated. Wordfish will recognize differences in word use between two texts as indicative of their different political positions, but in reality these differences could be due to the topics addressed by the authors [@lowe2013validating]. A special case of this, is in situations where texts use completely incomarable language or do not address similar topics at all. In these situations they cannot be scaled together, and if they are, it will often result in the main policy dimension being misspecified. Finally, the Wordfish estimator's likelihood function is prone to have many local minima, and estimation can easily get stuck in one, which we are not interested in. This problem could be compounded if there is not enough data for the curvature of the likelihood to be estimated correctly. In this situation, the algorithm might capture noise and a meaningless policy dimension.
+
+[^7]: When using supervised techniques like Wordscores, the researcher to some extent defines the policy space herself through her choice of reference texts. This still entails an assumption about unidimensionality, which is obviously likely to be wrong, but if the reference texts are chosen well enough, the estimator is unlikely to estimate a policy space that is very different from the one the researcher is interested in.  
+
+
+## Using Wordfish
+
+To illustrate the use of Wordfish, we investigate its performance in estimating the policy positions of European interest groups on three specific issues. Here, we draw on data from @egerod2016poisson. We use texts from the European Commission's online consultations regarding \emph{Reinforcing sanctioning regimes in the financial services sector}, \emph{A New European Regime for Venture Capital} and \emph{Review of the Investor Compensation Scheme Directive}. We will refer to them, simply, as Sanctions, Venture Capital and ICSD, respectively. For the present purposes, we include only a subset of the interest group responses. Below, when we examine the consequences of violated assumptions, we include all groups. Alongside the interest groups position papers, we include the Commission's original Green Paper, which outlines the issues within each consultation, and the final policy proposal.
+
+The main fracture between the interested parties in all three consultations was whether the EU should impose \emph{more} or \emph{less} rules. Therefore, we can think of the underlying spatial model as one, where actors are placed along a continuum ranging from wanting more to less supranational rules. This is the underlying political space in which we wish to place actors. To gauge Wordfish performance, we compare its estimates to hand-coded positions, which aim directly at capturing this space. See @egerod2016poisson for more information on the hand-coding.
+
+To prepare documents for Wordfish scaling, we reduce words to their stem, remove stopwords, numbers and punctuation. Figure \ref{wf:validate} shows the positions estimated through Wordfish, and how they correlate withe the hand-coded positions for documents in each of the three online consultations, we investigate here. The two correlate highly in all three cases, although by far most strongly in the case of National Sanctions, and clearly the least in the Venture Capital case. To save space, we do not discuss the reasons for discrepances between automated and human scaling, which are present in all three cases. 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{ScatterValidate.eps} 
+\caption{Validating Wordfish Estimates Against a Human Benchmark. \emph{Note: Horisontal lines around points are 95 pct. parametric Poisson bootstrapped confidence intervals (CIs) around the Wordfish estimate. Vertical, dashed lines are 95 pct. CIs from non-parametric bootstraps of the hand-coded scales. 500 resamples used. Solid line is the best linear fit, dotted diagonal line shows what a perfect fit would look like.}}
+\label{wf:validate}
+\end{center}
+\end{figure}
+
+We can use the word weights, or $\beta$ parameters, (i.e. the word discrimination parameter) to analyse the substantive content of the dimension recovered by Wordfish. This can potentially be used to explain, why the two sets of scales diverge for some documents [@jackman2001multidimensional]. Figure \ref{betas} shows the 21 words with the, respectively, highest and lowest weights for each consultation.
+
+\begin{figure}
+\begin{center}
+\includegraphics{WordWeight.eps} 
+\caption{Which Words Define the Policy Space? \emph{Note: Points show the point estimate for each word weight. Lines are 95 pct. CIs based on 500 resamples from a conditional Poisson distribution. Density plots show the marginal distribution of word weights in the full corpora. Dark shaded areas are below the 25th and 75th percentiles, respectively.}}
+\label{betas}
+\end{center}
+\end{figure}
+
+We can take the National Sanctions consultation as an example of how to diagnose divergence between human and machine based scales. There, we can observe that 'labour', 'claus' and 'employ' all have very negative weights -- far out in the tail of the full distribution of word weights. This can help us explain why the Belgian union of employees in the financial sector are estimated to be more advocating fewer EU rules. A thorough reading of their position document reveals that, while they are relatively positive overall, they spend many words strongly arguing against employees of financial institutions being liable to prosecution when laws are broken. This seems to be the aspect Wordfish has caught.
+
+
+## Extensions to Wordfish
+In an early implementation of the Poisson scaling model, @monroe2004talk use an Markov Chain Monte Carlo in a Bayesian setup to estimate a two-dimensional model. This is one way of dealing with some dimensionality issues. @slapin2008 have done so by manually separating out the parts of a text that are most closely aligned with predefined dimensions. 
+
+Besides these issues of dimensionality, there are number of relevant extensions to the Wordfish model itself. @lowe2013validating introduced the use of asymptotic standard errors, instead of the very computationally intensive Poisson bootrstrapped standard errors used in @slapin2008. The @lowe2013validating implementation also allows for varying levels of dispersion. Both the analytical and the original technique, however, rely heavily on the model being correctly specified. As a way of obtaining uncertainty estimates with weaker assumptions, @lowe2013validating also introduced a non-parametric bootstrap procedure. The quanteda package in R supplies functionality for random sampling of words, which can be used to implement the bootstrap with relative ease. @lauderdale2016measuring deal with problems of comparability between corpora by using Wordfish to estimate issue specific positions, which they aggregate using Bayesian linear factor analysis to get estimates of overall ideology from text data.
+
+Finally, @lo2016ideological exploit the fact that as the rate of failure converges to the limit, a Poisson distribution can be reparameterized as a negative binomial one. This allows them to incorporate a document level dispersion parameter, which can be interpreted as the clarity associated with a document's stated position.
+
+# When Assumptions Are Broken
+
+Assumptions about the generative model and the use of prior information vary between models. Thus, when one model is obviously misspecified and performs poorly a researcher can choose another, more suitable one. However, it is not well understood, how to handle violations of assumptions that are common across models, or how to proceed, when no algorithm performs satisfactorily. In this section, we will investigate the consequences of violations of two basic assumptions that all common scaling techniques rely on: the comparability of language use and the length of the texts.[^8] 
+
+
+We use real-world texts and simulate changes to the corpora to quantify the effect of marginal changes to document length and word use. This allows us to inspect what happens, when core assumptions are broken in realistic but controlled settings.
+
+[^8]: E.g. [@lowe2011estimating] investigate what happens, when distributional assumptions are broken.
+
+## Language Differences
+
+When we previously illustrated the use of Wordfish by using position documents from interest groups in EU consultations, we only relied on a subset of the actual position papers, consisting of 14, 13 and 15 documents, respectively, in the National Sanctions, Venture Capital and ICSD consultations. In reality, however, each corpus consists of 42, 44 and 57 documents from a very wide range of different actors ranging from individuals over government branches and NGOs through different kinds of corporations and capital funds. These three corpora present an extremely hard test for both the Wordscores and Wordfish algorithms, in particular regarding dimensionality and the comparability of the authors use of words.
+
+To gauge the impact of language differences, we ran both scaling techniques several times on different subsets of consultation documents. We began by running it on all documents in each consultation, then we randomly removed five to eight documents. In each consultation, we chose not to remove the type of actor which was most active in the consultation, which ensures that the included documents become more comparable with each iteration. In the case of Sanctions, we only removed non-corporations. In Venture Capital, we removed documents from actors that were not venture capital funds. In the case of the ICSD, we removed all other documents than those from national employer associations. After numerous iterations, this left only one or few types of organizations and the Commission. The strength of this framework lies in its approximation of counterfactual scenarios -- as documents are removed in a semi-random way, and the consultations otherwise remain the same, we hope to estimate the causal impact of altering the composition of the different corpora. Additionally, the dimensionality of the policy space is close to predefined by the Commission in its original policy paper, since it directs interested parties to comment on specific topics.
+
+To save space, we do not show the performance of scalers within each iteration. However, we do find that both Wordfish and Wordscores are highly sensitive to the subset of documents being used, and that both perform best in the smallest, most homogeneous sets of texts. To quantify the degree to which these improvements are driven by decreased differences in word use, we use the correlation between the recovered scales and hand coded positions as the dependent variable in two linear regressions -- one for each algorithm. We measure differences in language with two proxies: the average correlation in word use and the number of unique words in each iteration. Because other quantities change besides similarity of the documents, we include as controls the number of positions to be estimated, the average document length, an inverted Hirschmann-Herfindahl index capturing how many different types of interest groups that were included in the estimation and fixed effects for consultations. The results for our variables of interest are presented in Figure \ref{CompPerf}.
+
+As we can see, the improvements in algorithm performance follow predictable patterns. For both algorithms, the correlation between the human benchmark and the computer-based scales decreases by almost .1 for each percent the number of unique words increases. Note that because we control for average document length, the increase in the number of unique words captured here, is for an unchanged document length. For Wordfish, performance improves by more than .1 every time the average correlation of word use in the corpus increases by .1. This effect is smaller for Wordscores, where the improvement in performance is .02. While the latter estimate is not statistically significant, it is still a strong correlation.
+
+
+\begin{figure}
+\begin{center}
+\includegraphics{SimilarWordsPerformance.eps} 
+\caption{How the Performance of Scaling Algorithms Vary with the Comparability of Texts.}
+\label{CompPerf}
+\end{center}
+\end{figure}
+
+
+
+This illustrates that as word use in documents becomes more dissimilar, automatic scaling becomes less feasible. The fact that Wordscores is less vulnerable to differences in correlations in word use illustrates a key difference between the two algorithms. Wordfish relies heavily on documents addressing the same concerns using the same words. If they do not, the algorithm is likely to pick up differences in the topics the authors address, not in their political positions. For Wordscores, performance relies more on the reference texts being representative of the broader universe of texts in the corpus. As long as that is the case, differences in word frequencies matter less (although they are not irrelevant), but as they become less representative (e.g. because the number of unique words increase), performance of Wordscores decreases markedly. 
+
+
+## Document Length and Informativeness
+
+To get at the effect of document length on the performance of scalers, we use a text corpus, where we know that Wordscores and Wordfish provide good estimates of policy positions -- the @lowe2013validating data on parliamentary speeches during the debate on the 2010 budget in the Irish *Dail*. This data also includes estimates of the position of each speech based on human judgement. We simulate changes in document length by randomly reducing the number of times an actor articulates each word in the corpus by between 0 and 3. We reduce the word frequencies in the corpus in this way 100 times, estimating both Wordscores and Wordfish models in each iteration. To measure the performance of the algorithms, we predict the expert coded benchmark using using scales recovered from each algorithm and compute the root mean squared error (RMSE). Because reductions in word frequencies are random, we can get estimates of uncertainy through randomization inference repeating the entire process a 100 times. The results are presented in Figure  \ref{fig:length}
+
+
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics{DocLength_FirstHalf.eps} 
+\caption{Document Length and Performance of Scaling Models. \emph{Note: In each iteration, we reduce the frequency with wich each actor uses a word by a random integer between 0 and three. We run 100 iterations, and rerun the algorithm 100 times to get uncertainty. Shaded lines represents the root mean squared error in each iteration, the solid line shows the average across different random removals. Shaded area is the 95 percent confidence interval.}}
+\label{fig:length}
+\end{center}
+\end{figure}
+
+The results show that the performance of Wordfish and Wordscores decreases dramatically, as the average document length decreases from the baseline of approximately 3,900. To begin with, scales from both models predict the positions of speeches with a relatively small RMSE of between .3 and .4 -- corresponding to approximately one-third of the standard deviation. The error increases quickly and stabilizes at about 80 percent of a standard deviation for Wordfish, when it hits an average document length of 1,800 words. For Wordscores, the RMSE stabilizes at approximately 75 percent of a standard deviation, when the average document length is around 700.[^9] With an error of that size, the recovered scales are close to useless.
+
+As in the previous simulation, the use of reference texts to guide the estimates of the Wordscores model proves an important feature. As the average document length decreases below 600 words, Wordscores performance actually starts to improve again. This happens because the word usage in the reference texts becomes more representative, as the length of the left-out texts decreases. While this obviously hinges on a good choice of reference texts, it suggests that the performance of the Wordscores model is a non-monotonic function of document length. With the right reference texts, the algorithm may perform equally well in small and large corpora. The obvious caveat is, of course, that because the texts are very short in the final 20 iterations of each chain, the uncertainty around the average RMSE is relatively high. 
+
+
+[^9]: It should be noted that the speed with which the error increases in part is driven by the fact that more word are deleted within each iteration in the beginning, because there simply is more content to delete.
+
+## Guidelines for Constructing Your Corpus
+With the results from these two simulations studies, we can provide some tentative guidelines for researchers. While it is difficult to give precise advise beyond the particular cases, we have investigated here, the results show that the performance of the two scaling techniques is strongly influenced by observable characteristics of the documents being scaled. While we probably cannot infer precise thresholds from these cases to the universe of potential texts to be scaled, it does tells us, what we should be aware of, when we construct those corpora.
+
+In our cases, scaling documents, when the average correlation between their word frequencies is below .6-.7, resulted in poor performance. Additionally, increasing the number of unique words beyond 2,000 without also increasing document length resulted in the recovery of biased positions. Regarding the length of the included documents we found that scaling corpora with fewer than approximately 1,800 words in the average text is infeasible using both algorithms. For Wordscores, however, corpora consisting of very short texts (below 400 words on average) can be scaled, if the reference documents provide good coverage of the virgin texts.
+
+The analyses also provide some insight into how these problems can potentially be handled. First, when there are many unique words relative to the average document length, it will often make sense to trim away very infrequent words, as this removes noise in the Wordfish estimation and improves the representativeness of the reference texts for the Wordscores algorithm.
+
+Second, if texts simply are incomparable, it can make sense to redefine the population of interest to a more coherent group of texts, if it is possible given the particular research question. If estimation is done over time, it would make sense to split the sample up and run the algorithm within more narrow time periods. If the positions of many different types of groups are to be recovered, one can focus on the most relevant one and only include that one in the estimation.  
+
+Finally, if the average document is very short, and there is no way to increase the amount of data available for estimation, Wordscores seems to be able to recover good, but noisy, positions -- under the important condition that the reference texts are representative of the remaining corpus.
+
+# What is the Road Ahead?
+
+In this chapter, we have laid out the conceptual foundations for scaling policy positions from hand coded texts as well as automated content analysis. We argued that a spatial model of how policy positions relate to language use is a necessary condition for scaling texts, and that the choice of statistical model should follow from this conceptualization. Based on this framework for understanding text scaling, we outlined the necessary and sufficient assumptions for estimating positions from political texts. This highlights how important conceptualization and the accompanying statistical assumptions are -- which, yet again, shows that automated scaling can never replace human judgement, only augment it [@grimmer2013].
+
+We then introduced commonly used techniques for scaling text through supervised as well as unsupervised machine learning (the Wordscores and Wordfish estimators, respectively). Based on the conceptual framework outlined in the beginning of the chapter, we discussed the assumptions embedded in these techniques, and how they could be broken. We illustrated the use of these three scaling models with diverse corpora of political text.
+
+We then proceeded to investigate what happens, when two important assumptions are broken. By simulating random changes in two corpora of real-world text, we illustrated the consequences of estimating positions from texts that a) use their words too differently, and b) are too short. The results suggested that the performance of Wordscores is hurt less by changing these factors, as long as the reference texts are representative, and yielded some tentative guidelines about how to construct a corpus. The key take-away is that  performance varies systematically and according to observable features of a corpus. While the thresholds uncovered in the specific corpora investigated here, may not hold in any given other setting, the findings can still inform researchers, when they construct a corpus. The results illustrate how we can use observable features of a corpus to judge its suitability for scaling -- we do not always have to rely on abstract argumentation.
+
+In conclusion, we will briefly discuss two potential venues for future research into text scaling, which we think may be fruitful: a) potential ways of improving our scaling models and b) how we can think about measurement error, when we incorporate scaled positions in econometric models. One goal of this diverseity was to illustrate how broadly the spatial model of politics can be construed.
+
+## Improving Scaling Models: Dealing with Comparability and Conditional Independence
+
+Throughout this chapter, we have repeatedly discussed two assumptions about the textual context: 1) conditional independence of word (or n-gram) frequencies, and 2) similarity in the way authors ascribe meaning to words (i.e. stability of the vocabularium). We believe that important new work on word and text embeddedness [@mikolov2013; @ng2017] may offer ways to deal with this within existing scaling frameworks. We will briefly discuss two such possibilities.
+
+**Conditional Independence of Words**. While most scaling techniques peform relatively well, in spite of relying on the simplifying bag-of-words assumption, there is little doubt that it can hurt algorithm performance -- and sometimes severely. Throughout the text, we have emphasized that using the frequencies of single word -- while the political science standard -- is not the only feasible level of analysis. Any n-gram could conceivably be used. This, however, could induce more noise than looking at single words. One way to think about the utility of word embeddedings for scaling techniques is that they offer a statistical model for learning about word context -- and, among other things, ways to construct n-grams in a principled manner. The iconical word2vec [@mikolov2013; @ng2017] technique, for instance, either uses the context of any given word to predict it, or that word to predict its own context. Either provides a set of probabilities that words co-occur, which -- in turn -- gives a foundation for finding the optimal n-gram, which could make the conditional indepence assumption more valid.
+
+**Grouping Most Similar Documents**. A well-know fact -- which we substantiated through simulations -- is that dissimilarity in word use and the way in which meaning is ascribed to individual words can severely harm the performance of scalers. Embedding texts in their contexts migh help in this. If we think about dissimilarity of documents as a confounding factor, learning the context of documents may offer a way of modeling it directly. Seeing as position scales will be severely confounded with the most prevalent topics, when documents are dissimilar enough, one way of doing this would be by using topic modeling to learn about the topics in documents before scaling, and then conditioning on them during the estimation of document positions. By only comparing documents that concern similar topics during estimation, this could be one way of estimating the policy positions of highly dissimilar actors on the same latent scale.
+
+
+
+## Improving the Use of Scales: Systematic Measurement Error in Political Positions
+
+No matter how much we improve our models or how complex, they become, they will always be erroneous approximations of real-world text generation. While it is relatively straighforward to deal with the special cases, when our models perform either dismally or in a superb manner, we need more research on how to handle the intermediate cases, where a model provides estimates that correlate with true positions, but far from perfectly. This is especially pertinent, when we use those position scales in econometric models seeking to estimate their correlates or use them to explain other political phenomena. The default solutions seem to be to either disregard the measurement error (or assume that it is random), or to disregard any results based on these imperfect scales -- neither of which are satisfactory. Because position scales in any given case will be flawed, they will correlate imperfectly with the true positions of a set of actors. Thus, by definition, measurement error in the estimated scales cannot be random. But on the other hand, it seems foolish to discard estimates that, while wrong, provide some useful information.
+
+While a complete treatment of problems with measurement error is beyond the scope of this chapter, we will briefly illustrate how we can think about problems arising, when including erroneous scaling estimates in econometric models. To do so, we conduct a number of Monte Carlo simulations. We use variations of a simple setup: we include a variable measured with some systematic error as either dependent, independent or both variables in a linear regression. We vary the measurement error in increments of 0.2, so the observed scales correlate with the true position estimates with r $\in \{1; .8; .6; .4; .2\}$. To keep things simple, we assume that all remaining Gauss-Markov assumptions are met. We run the three models in 10,000 random samples each including 1,000 observations. Figure \ref{MCs} shows the distributions of bias arising from each scenario.
+
+\begin{figure}
+\begin{center}
+\includegraphics{MonteCarlos.eps} 
+\caption{Error in Scales and Bias in Econometric Models. \emph{Note: Each distributions shows the percentage difference between estimated coefficient and the true effect as measurement error varies. Each distribution is made up of 10,000 iterations of a OLS regression each with a sample size of 1,000 observations.}}
+\label{MCs}
+\end{center}
+\end{figure}
+
+Because the setup does not necessarilly generalize, the most important thing to note is the direction of bias: Systematic error in the dependent variable biases the regression estimate downward, while the opposite holds, when the independent variable is measured with error. There is reason to believe that the errors to some extent cancel out, when both variables are measured erroneously. This conclusion, however, rests on the assumption that errors in variables on either side of the equation induce an equal amount of bias in the estimation. In this particular setup, that only seems to be the case, when the independent variable correlates $>$ .6 with the true concept. For lower correlations, bias induced by systematic measurement error on the right hand side is much larger in this scenario.
+
+This provides an initial illustration of how measurement error in position scales may affect results downstream, when they are included in econometric models. While the scenarios are from general, the exercise shows that researchers should think hard about how measurement error in their scales may impact later stages of their research -- not just ignore or discard them -- and that more research into the topic might be needed.
+
+
+
+\newpage
+## Literature
+
+
+
+
+
+
