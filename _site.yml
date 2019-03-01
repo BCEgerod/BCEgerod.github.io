@@ -21,4 +21,3 @@ output:
   html_document:
   encoding: UTF-8
   site: bookdown::bookdown_site
-  encoding: UTF-8
