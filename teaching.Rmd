@@ -2,4 +2,4 @@
 title: "Teaching"
 ---
 
-I also teach courses ...
+I also teach courses ..
