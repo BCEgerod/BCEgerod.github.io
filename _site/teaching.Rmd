@@ -4,7 +4,7 @@
 <style>
 .column-left{
   float: left;
-  width: 40%;
+  width: 30%;
   text-align: left;
 }.column-right{
   float: right;
@@ -20,7 +20,7 @@
 
 
 <div class="column-left">
-<img src="stata.png" style="width:95%; margin-right: 20px"; align="left">
+<img src="stata.png" style="width:100%; margin-right: 20px"; align="left">
 
 
 <br>
@@ -34,8 +34,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 ####Nominations:
 
