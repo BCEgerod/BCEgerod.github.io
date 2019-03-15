@@ -281,5 +281,3 @@ Scaling Political Positions from Text -- Assumptions, Methods and Pitfalls
 </div>
 
 
-</body>
-</html>
