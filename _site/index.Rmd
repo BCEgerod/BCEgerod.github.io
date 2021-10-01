@@ -38,7 +38,6 @@ pagetitle = "Work in Progress"
 <br>
 <br>
 
-###Contact Info:
 
 Phone: (+45) 2715 1536
 
