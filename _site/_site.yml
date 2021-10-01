@@ -18,3 +18,4 @@ navbar:
     href: https://twitter.com/BCEgerod
 output:
   html_document:
+encoding: UTF-8
