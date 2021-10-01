@@ -1,5 +1,5 @@
 ---
-pagetitle = "Work in Progress"
+--metadata pagetitle= "Work in Progress"
 ---
 
 <style>
