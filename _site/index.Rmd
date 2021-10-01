@@ -1,5 +1,5 @@
 ---
-title="Benjamin Egerod"
+pagetitle = "Work in Progress"
 ---
 
 <style>
@@ -22,7 +22,7 @@ title="Benjamin Egerod"
 
 
 <div class="column-left">
-<img src="me.jpg" style="width:70%; margin-right: 20px"; align="left">
+<img src="me2.png" style="width:70%; margin-right: 20px"; align="left">
 
 
 <br>
