@@ -1,79 +1,66 @@
 ---
 ---
+
+<style>
+.column-left{
+  float: left;
+  width: 40%;
+  text-align: left;
+}.column-right{
+  float: right;
+  width: 60%;
+  text-align: left;
+}
+</style>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script type="text/javascript" src="http://tester3.yolasite.com/resources/javascript/jtruncate.js"></script><script type="text/javascript">// <![CDATA[
+// Settings for script 
+$(document).ready(function() { 
+$('.text').jTruncate({ 
+length: 170, /* The number of characters to display before truncating. */ 
+minTrail: 0, /* The minimum number of "extra" characters required to truncate. This option allows you to prevent truncation of a section of text that is only a few characters longer than the specified length. */
+moreText: "Read More", // The text to use for the "more" link. 
+lessText: "Read Less", // The text to use for the "less" link. 
+ellipsisText: "...", // The text to append to the truncated portion. 
+}); 
+});
+// ]]></script>
+
+
+
 <br>
 <br>
-My research interests revolve around four main themes: 1) Political connections and corporate political influence, 2) revolving door politics, 3) political responsiveness and 4) measurement. Below, I detail my research within each topic.
+My research interests revolve around four main themes. The common denominator is an interest in whether and why decision-makers respond to pressures from different groups in society: 1) Political connections and corporate political influence, 2) revolving door politics, 3) responsiveness to the mass public and 4) measurement. 
+
+Below, I detail my research within each topic.
 
 <br>
 
 ### Political Connections and Corporate Influence on Public Policy
 
-Something insightful on corporate political activity ..
+Most people expect that the political activities of companies matter, but existing evidence has only sparringly supported this belief. My research on this topic revolves around two agendas: 1) Firms may not care about the content of legislation if they can change the way it is enforced -- and they can use political connections to this end. 2) I draw on a wide range of new data sources to capture various ways in which firms can influence policy outcomes, and match this to firm-level finances.
 
+<div class="column-left">
 
-<img src="TaxSaved.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+<img src="TaxSaved.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
 
+</div>
+<div class="column-right">
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TaxDraft.pdf">The Revolving Door and Taxes -- Political Connections Decrease Corporate Tax Rates</a>
  
+ 
+Awarded the Stigler Dissertation Award by the Stigler Center at the University of Chicago's Booth School of Business.
 
-I investigate the effect of political connections on regulatory forbearance by examining the interactions between firms and the Internal Revenue Service. <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<p class="text"> I argue that hiring former legislators leads to regulatory forbearance, and firms use this to pursue economic rents. I test the argument with data on firm-level taxes and the IRS's enforcement activities. I compile a database of publicly listed firms, which have hired Members of Congress (MCs) in the period 2004-2015. I show that hiring a former MC decreases the average company's tax rate. The effect is strongest, when firms hire the best connected former MCs, who served in committees responsible for oversight of the IRS. To investigate whether the effect is driven by selective enforcement, I collect data on IRS audits and find that hiring a former MC is associated with a lower probability of being audited. Additional tests do not suggest that the findings are driven by general rule changes or lobbying activities. This indicates that rules are enforced differently against politically connected firms. </p>
 
 
-.collapsible {
-    color: black;
-    cursor: pointer;
-    padding: 0px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-    background-color:white;
-    element.style.color = red;
-}
-
-
-.content {
-    padding: 0px;
-    overflow: hidden;
-    color=black;
-    style="color:red";
-    element.style.color = black;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content" >
-  <p>For fear of retribution, agencies may enforce rules more leniently against firms with
-political connections. I test the argument as it pertains to the enforcement of
-tax policy by the Internal Revenue Service (IRS). I compile a novel database of
-publicly listed firms, that have hired Members of the US Congress (MCs) in any
-capacity in the period 2004-2015. I present evidence that hiring a former MC
-decreases the average company's tax rate by a large margin relative the the changes,
-the average firm normally experiences. The reduction is short-lived, but yields
-meaningful tax-savings for the individual firm, while only modestly impacting public
-finances. I show that the effect is driven by the MCs, who have the strongest
-political connections, and served in committees with oversight of the IRS. I present
-suggestive evidence that firms that hire highly connected MCs substitute away from
-traditional forms of lobbying, and are invited to hearings more often. This is likely
-to pressure the IRS in their decision-making. These results indicate that firms can
-use the revolving door to pursue significant economic rents.</p>
 </div>
 
 
-
-</body>
-</html>
-
-
-
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -82,41 +69,21 @@ use the revolving door to pursue significant economic rents.</p>
 <br>
 
 
-<img src="TrumpTrends.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+<div class="column-left">
+
+<img src="TrumpTrends.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
+
+</div>
+<div class="column-right">
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/LobbyistsGovernment.pdf">Lobbyists as Government Employees -- Evidence from the Bureaucracy</a>
 
 *With Josh McCrain, Emory University*
 
-Leveraging the staggered pattern of appointments into the Trump administration in a difference-in-difference design, we estimate the returns to connections to key rule makers in the bureaucracy for lobbying firms. <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
 
 
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
+<p class="text"> A growing body of research examines the transition of government employees into the private sector, commonly known as the revolving door. A common conclusion in this work is that government employees cash in on their experience and, most importantly, their connections to current officials. We focus on two under-studied aspects of the revolving door: 1) the transition of lobbyists back *into* government and 2) the value of connections between lobbyists and government agencies. Exploiting the unexpected victory of Donald Trump in the 2016 presidential election and the staggered timing of appointments into his administration, we find that firms whose lobbyists went back through the revolving door saw 20-70\% increase in revenue, and the increase was larger in Democrat-leaning firms. Our results shed light onto the political economy of the lobbying industry and suggest a need to further study the interaction between lobbying firms and the federal bureaucracy.</p>
 
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p>	A growing body of research examines the transition of government employees into the private sector, commonly known as the revolving door. A common conclusion in this work is that government employees cash in on their experience and, most importantly, their connections to current officials. We focus on two under-studied aspects of the revolving door: 1) the transition of lobbyists back *into* government and 2) the value of connections between lobbyists and government agencies. Exploiting the unexpected victory of Donald Trump in the 2016 presidential election and the staggered timing of appointments into his administration, we find that firms whose lobbyists went back through the revolving door saw 20-70\% increase in revenue, and the increase was larger in Democrat-leaning firms. Our results shed light onto the political economy of the lobbying industry and suggest a need to further study the interaction between lobbying firms and the federal bureaucracy.</p>
 </div>
 
 
@@ -124,47 +91,34 @@ Leveraging the staggered pattern of appointments into the Trump administration i
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="column-left">
 
 
-<img src="FirmNetwork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+<img src="FirmNetwork.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
 
+</div>
+<div class="column-right">
 
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/AssetSpecificity.pdf">Asset specificity, corporate protection, and trade policy</a>
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/AssetSpecificity.pdf">Asset specificity, corporate protection, and trade policy</a> (Under Review)
 
 *With Mogens K Justesen, Copenhagen Business School*
 
-Using firm-level data on petitions for antidumping protection from 22 WTO jurisdictions, we revisit classical question of whether firms with specific assets gain more protection. We also investigate intra-industry spill over effects.<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
 
-
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p>	We examine the role of firms in shaping trade protection. Firms with specific assets find it more costly to reorganize production in the face of international competition, which makes them lobby more intensively for protection. But decision-makers will not grant unlimited trade protection. This forces companies to compete for protection, which causes it to diffuse within groups of same-good producers. To test this argument, we combine antidumping petitions with financial data on the firms filing them in a unique dataset. Using spatial autoregressive models, we show that companies with specific assets are more likely to be successful when petitioning for antidumping protection and that this decreases protection afforded to competing firms.</p>
+<p class="text"> We provide the first firm-level evidence that policy-makers tailor trade policy to suit selected firms. We argue that firms with relatively higher levels of specific assets find it more costly to reorganize production, and are hurt more by international competition. In response, policy-makers grant more trade protection to firms with fixed assets. Since protectionism is costly, firms compete for it, which creates diffusion dynamics where protection granted to one firm affects protection granted to others. To test this claim, we utilize the special role antidumping duties (ADDs) play in international trade, and combine petitions for ADDs with financial data on the firms filing them in a unique dataset. Using spatial autoregressive models, we find that firms with specific assets are granted more protection. However, diffusion dynamics differ within and between groups of firms producing the same good. This suggests that firms can partly shape their own level of trade protection. </p>
 </div>
 
 
+
+
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -172,93 +126,85 @@ Using firm-level data on petitions for antidumping protection from 22 WTO jurisd
 <br>
 <br>
 
+
+<div class="column-left">
+
+
+<img src="Validate.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
+
+</div>
+<div class="column-right">
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/MoneyAndInfluenceInTheEU_draft2.pdf">Does Money Matter When Firms Lobby? Firm-level Evidence from Consultations at the
+EU Commission </a> (Under Review)
+
+*With Anders Woller, University of Copenhagen*
+
+<p class="text"> This study presents the first firm-level quantitative evidence that companies with high operating performance are more likely to persuade the EU Commission to adhere to their preferences. We do this by collecting data on individual companies active across 45 consultation procedures from 2005-2013 on issues related to the internal market in the EU, totaling more than 300 companies. We propose three distinct mechanisms accounting for the association: companies with high operating performance are 1) able to conduct investments in the economy, upon which decision-makers rely 2) likely to be knowledgeable about their respective sector -- information which decision-makers demand 3) capable of mounting opposition if decision-makers are unresponsive to their needs. Our results support the first proposed mechanism: politicians are more responsive to companies with high operating performance as it allow companies to invest in employment opportunities. Finally, we show that high salience of an issue, following times of crisis, significantly limits the influence of big business. </p>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Revolving Door Politics
-
-It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, we know very little about, whether the so-called revolving door between business and politics changes policy outcomes. In my dissertation, I investigate how 1) the potential for post-elective employment shapes the behavior of US Members of Congress, and 2) firms that hire former Members of Congress can ...
-
-
-<img src="HardWork.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
-
- &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a>
-
-I investigate the effect of private sector career prospects on whether US senators choose to walk through the revolving door.  <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
+It routinely attracts both attention and condemnation, when elected officals leave office to take jobs in the private sector. Despite this, we know very little about, whether the so-called revolving door between business and politics changes policy outcomes. In my dissertation, I investigate how the potential for lucrative post-elective employment shapes the behavior of US Members of Congress.
 
 
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
+<div class="column-left">
 
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p>While it is often conjectured that private sector salaries lure elected politicians out of public service, no quantitative evidence exists on this proposition. If private sector actors compete with the electorate for the labor of high-skilled politicians, it would have important implications for representative democracy. I argue that legislators gauge their private sector career prospects by observing how successful their former colleagues, who now work as lobbyists, are. I document that when career prospects improve, so does the probability that senators take a lobbying job.  There is no effect immediately before a senator's pension scheme improves. Senators, who retire from working life after Congress or are elected to a safe seat, are also unaffected.  Finally, senators, who have sponsored the least bills and are more absent for floor votes, are affected the most. All of this indicates that senators react to opportunity costs associated with being in office.</p>
+<img src="HardWork.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
+
+</div>
+<div class="column-right">
+
+ &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/TheLure.pdf">The Lure of the Private Sector -- Career Prospects Affect Selection out of the Senate</a> (Under Review)
+
+<p class="text"> While it is often conjectured that private sector salaries lure politicians out of public service, no quantitative evidence exists on this proposition. I argue that legislators gauge their private sector career prospects by observing how successful their former colleagues are in lobbying jobs. I document that when career prospects improve, so does the probability that senators become lobbyists. An array of tests suggests that the effect arises, because senators react to opportunity costs associated with being in office: There is no effect immediately before a senator's pension scheme improves, nor among those who retire from working life after Congress or are elected to a safe seat.  Senators, who have sponsored the least bills and are absent for floor votes, are affected the most. These results show that the electorate competes with private sector actors for the labor of politicians. This sheds light on the motivations of elected officials, and the dynamics of political selection.</p>
 </div>
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="column-left">
 
-<img src="EmployerDistribution.png" style="width:37%; border:0px solid; margin-right: 20px" align="left">
+
+<img src="EmployerDistribution.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
+
+</div>
+<div class="column-right">
 
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/VotingForACareer.pdf">Voting for a Career -- The Revolving Door Moderates the Senate</a>
 
-I examine how the final term voting of senators change, when they are about to walk through the revolving door. They moderate their roll call voting and converge to the ideal point of their future employers.<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
-
-
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p>	I investigate how the revolving door affects voting in the Senate. The literature on final-term problems suggests that senators should become more extreme before they leave office, because they no longer are accountable to voters. Lack of electoral accountability could, however, have different effects depending on the senator's career ambitions. While retiring senators are no longer accountable to anyone but themselves, revolving door politicians will be accountable to their future employers, because they depend on them for post-elective employment. During their final Congress, this should lead revolving door senators to moderate themselves, while retiring ones should grow more partisan. Using data on post-elective career trajectories from 102nd to the 113th Senate, I present fixed effects estimates that back this claim. I show that the effect is driven by senators, who choose to resign, and provide evidence suggesting that the shift happens, because senators anticipate the preferences of their future employer.</p>
+<p class="text">  I investigate how the revolving door affects legislative behavior in the Senate. The literature on final-term problems suggests that senators should begin shirking their responsibilities before leaving office, because they no longer are accountable to voters. Lack of electoral accountability could, however, have different effects depending on the senator's career ambitions. I show that senators, who voluntarily leave office for private sector employment, become more moderate in their voting during their final Congress. Those who are voted out, or leave the labor market entirely, are unaffected or become more extreme. Additionally, I show that a) revolving door senators vote in closer alignment with the pool of post-elective employers, b) future employers experience larger stock market returns in the days immediately after revolving door senators introduce new bills, and c) final-term revolvers exert more legislative effort. This suggests that revolving door senators change behavior to signal that they are employable.</p>
 </div>
 
+
+
 <br>
 <br>
 <br>
@@ -269,48 +215,32 @@ I examine how the final term voting of senators change, when they are about to w
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ### Political Responsiveness
 
-Something about responsiveness.
+<div class="column-left">
 
 
-<img src="Muni.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
 
+<img src="Muni.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
+
+
+</div>
+<div class="column-right">
  &nbsp; <br><a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/DanishMuni.pdf">Can Citizens Set City Policy? Evidence From A Decentralized Welfare State </a>
+ 
+(Invited to revise and resubmit at the Urban Affairs Review)
 
-*With Martin Vinæs Larsen, Aarhus University.*
-
-
-We show that local fiscal policy in Denmark responds strongly to voter preferences. The effect of a preference changes lasts as long as nine years into the future. <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
+*With Martin Larsen, Aarhus University.*
 
 
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p> Municipal governments supposedly empower citizens, giving them the ability to shape the political organization of their local community. In spite of this, we know little about whether municipal governments are in fact responsive to the policy views of municipal electorates. In this study, we look at whether the policy implemented by local politicians actually responds to changes in the public mood. To do this, we compile a unique and comprehensive dataset of local fiscal policy, which we use to construct municipal-level estimates of fiscal policy conservatism. This detailed policy data is then linked to an indicator of local ideological sentiment. We find strong evidence for dynamic responsiveness: when preferences in a municipality changes public policy responds.</p>
+<p class="text"> Municipal governments supposedly empower citizens, giving them the ability to shape the political organization of their local community. In spite of this, we know little about whether municipal governments are in fact responsive to the policy views of municipal electorates. In this study, we look at whether the policy implemented by local politicians actually responds to changes in the public mood. To do this, we compile a unique and comprehensive dataset of local fiscal policy, which we use to construct municipal-level estimates of fiscal policy conservatism. This detailed policy data is then linked to an indicator of local ideological sentiment. We find strong evidence for dynamic responsiveness: when preferences in a municipality changes public policy responds.</p>
 </div>
 
 <br>
@@ -320,72 +250,36 @@ We show that local fiscal policy in Denmark responds strongly to voter preferenc
 <br>
 <br>
 <br>
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ### Political Methodology and Measurement
 
-Something on methods and measurement
+
+<div class="column-left">
 
 
-<img src="WordWeight.png" style="width:38%; border:0px solid; margin-right: 20px" align="left">
+<img src="WordWeight.png" style="width:70%; border:0px solid; margin-right: 20px" align="left">
 
+
+</div>
+<div class="column-right">
 Scaling Political Positions from Text -- Assumptions, Methods and Pitfalls
 
 *With Robert Klemmensen, University of Southern Denmark*
 
-*Chapter in: Luigi Curini & Robert Franzese (Eds.): SAGE Handbook of Research Methods in Political Science & International Relations (Forthcoming).*
+*Invited chapter for: Luigi Curini & Robert Franzese (Eds.): SAGE Handbook of Research Methods in Political Science & International Relations (Forthcoming).*
 
-
-
-We review standard methods for scaling political positions from text. We outline how the techniques relate to measurement theory in general, review assumptions and illustrate their use. <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.collapsible {
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    width: 20%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 12px;
-}
-
-
-.content {
-    padding: 0px;
-    display: none;
-    overflow: hidden;
-}
-</style>
-</head>
-<body>
-
-<button style="color:black" class="collapsible">Open Abstract</button>
-<div class="content">
-  <p> The abstract.</p>
+<p class="text"> In this chapter we review the different automated techniques for scaling text most commonly used in political science. We start by relating text scaling to the broader field of measurement models aimed at estimating latent positions. Through this comparison, we outline the assumptions underlying the scaling of political text. We proceed to show how the most commonly used scaling techniques build statistical models of text through these assumptions. In doing so, we also show the utility of the various techniques as well as their vulnerable spots. We then focus on two assumptions that are common across all techniques: that the texts are sufficiently a) long and b) similar in the way meaning is ascribed to words. Through simulations, we investigate how sensitive various techniques are to violations of these assumptions. We conclude by discussing how the need for awareness about model assumptions illustrates how automated scaling should not replace human judgement. We also discuss how a) techniques for estimating word and text embeddedness may improve our scaling techniques by incorporating context, and b) the need for conceptualizing measurement error arising from wrong models.</p>
 </div>
 
-
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
 
 </body>
 </html>
