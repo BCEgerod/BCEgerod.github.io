@@ -1,0 +1,67 @@
+---
+pagetitle = "Work in Progress"
+---
+
+<style>
+.column-left{
+  float: left;
+  width: 40%;
+  text-align: left;
+}.column-right{
+  float: right;
+  width: 60%;
+  text-align: left;
+}
+</style>
+
+
+
+<br>
+<br>
+<br>
+
+
+<div class="column-left">
+<img src="me2.png" style="width:70%; margin-right: 20px"; align="left">
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+###Contact Info:
+
+Phone: (+45) 2715 1536
+
+<a href="mailto:bcke.egb@cbs.dk">E-Mail</a><br/>
+
+<a href="https://www.cbs.dk/en/research/departments-and-centres/department-of-international-economics-government-and-business/staff/bckeegb">University Profile</a><br/>
+
+<a href="https://github.com/BCEgerod/BCEgerod.github.io/blob/master/papers/CV_BCKE.pdf">My full CV</a>
+
+</div>
+<div class="column-right">
+
+I am an assistant professor (tenure track) at the Department of International Economics, Government and Business. My research examines the various roles that money plays in politics, with an emphasis on how individual firms engage in the political process. I am particularly interested in the role that social connections to politicians play in corporate lobbying. A large part of my research examines interactions between firms and the bureaucracy.
+
+In my research, I draw on quantitative methods, and I have a strong focus on research design and quasi-experimental methods. Since most of the interactions I am interested in are extremely difficult to observe, I work with non-traditional forms of data (e.g. text), and often leverage data science techniques to analyze them.
+
+My dissertation on the so-called revolving door between the US Congress and the private sector received the 2018/19 Stigler Dissertation Award. Additionally, I am a Stigler Junior Fellow at the Stigler Center, University of Chicago, Booth School of Business.
+
+</div>
+
+
+
+
+
+
+
